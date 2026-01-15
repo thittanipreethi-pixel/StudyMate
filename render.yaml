@@ -1,0 +1,42 @@
+services:
+  # Backend Django Service
+  - type: web
+    name: studymate-backend
+    env: python
+    region: oregon  # Change to your preferred region
+    plan: free  # Change to 'starter' or 'standard' for production
+    buildCommand: pip install -r requirements.txt && python manage.py migrate --noinput && python manage.py collectstatic --noinput
+    startCommand: gunicorn backend.wsgi:application --bind 0.0.0.0:$PORT
+    healthCheckPath: /api/
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: False
+      - key: ALLOWED_HOSTS
+        value: studymate-backend.onrender.com
+      - key: MONGODB_URI
+        sync: false  # Set this manually in Render dashboard
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false  # Set this manually in Render dashboard
+      - key: CLOUDINARY_API_KEY
+        sync: false  # Set this manually in Render dashboard
+      - key: CLOUDINARY_API_SECRET
+        sync: false  # Set this manually in Render dashboard
+      - key: PORT
+        value: 10000
+      - key: CORS_ALLOWED_ORIGINS
+        value: https://studymate-frontend.onrender.com
+    rootDir: server
+
+  # Frontend React Service (Static Site)
+  - type: static
+    name: studymate-frontend
+    region: oregon  # Change to your preferred region
+    plan: free  # Change to 'starter' or 'standard' for production
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: VITE_API_BASE_URL
+        value: https://studymate-backend.onrender.com/api
+    rootDir: client
