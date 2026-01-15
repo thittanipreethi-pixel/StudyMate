@@ -4,11 +4,13 @@
 
 set -e
 
+echo "=== Starting StudyMate Backend ==="
+echo "Current directory: $(pwd)"
+echo "Python version: $(python --version)"
+
 echo "Running database migrations..."
+cd /opt/render/project/src/server || cd server
 python manage.py migrate --noinput
 
-echo "Collecting static files..."
-python manage.py collectstatic --noinput || true
-
 echo "Starting Gunicorn..."
-exec gunicorn backend.wsgi:application --bind 0.0.0.0:$PORT
+exec gunicorn backend.wsgi:application --bind 0.0.0.0:${PORT:-10000}
