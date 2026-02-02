@@ -1,4 +1,4 @@
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://studymate-tkmw.onrender.com/api'
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://studymate-backend-swpd.onrender.com/api'
 
 // Helper function to get auth token
 const getAuthToken = () => {
