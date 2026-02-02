@@ -57,19 +57,11 @@ function Home() {
             <p className="text-xl md:text-2xl text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed">
               No more scattered WhatsApp groups or lost emails. StudyMate brings all your academic materials together in one organized, secure, and intelligent platform.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button className="group relative bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all shadow-2xl hover:shadow-indigo-500/50 transform hover:-translate-y-1 overflow-hidden">
+            <div className="flex justify-center items-center">
+              <Link to="/signup" className="group relative bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all shadow-2xl hover:shadow-indigo-500/50 transform hover:-translate-y-1 overflow-hidden">
                 <span className="relative z-10">Get Started Free</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              </button>
-              <button className="group bg-white hover:bg-gray-50 text-gray-700 border-2 border-gray-300 hover:border-indigo-500 px-8 py-4 rounded-xl text-lg font-semibold transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                <span className="flex items-center space-x-2">
-                  <span>Watch Demo</span>
-                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </span>
-              </button>
+              </Link>
             </div>
             
             {/* Stats */}
@@ -304,18 +296,15 @@ function Home() {
           <p className="text-xl text-indigo-100 mb-10 max-w-2xl mx-auto">
             Join thousands of students who have already streamlined their academic journey with StudyMate
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="group bg-white text-indigo-600 hover:bg-gray-50 px-10 py-5 rounded-xl text-lg font-semibold transition-all shadow-2xl hover:shadow-white/50 transform hover:-translate-y-1">
+          <div className="flex justify-center">
+            <Link to="/signup" className="group bg-white text-indigo-600 hover:bg-gray-50 px-10 py-5 rounded-xl text-lg font-semibold transition-all shadow-2xl hover:shadow-white/50 transform hover:-translate-y-1">
               <span className="flex items-center justify-center space-x-2">
-                <span>Start Your Journey</span>
+                <span>Get Started Free</span>
                 <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </span>
-            </button>
-            <button className="bg-white/10 backdrop-blur-lg text-white border-2 border-white/30 hover:bg-white/20 px-10 py-5 rounded-xl text-lg font-semibold transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-              Learn More
-            </button>
+            </Link>
           </div>
         </div>
       </section>
