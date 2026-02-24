@@ -23,7 +23,7 @@ def get_mongodb_client():
         
         # Default MongoDB URI
         if not mongodb_uri:
-            mongodb_uri = 'mongodb+srv://nalliayanandhakumar_db_user:StudyMate@cluster0.giucynj.mongodb.net/studymate_db?retryWrites=true&w=majority'
+            mongodb_uri = 'mongodb+srv://thittanipreethi_db_user:preethi@2006@cluster0.oepojpf.mongodb.net/studymate_db?retryWrites=true&w=majority'
         
         # Configure SSL for MongoDB Atlas
         import ssl

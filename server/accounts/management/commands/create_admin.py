@@ -15,26 +15,26 @@ class Command(BaseCommand):
         parser.add_argument(
             '--username',
             type=str,
-            default='Admin',
-            help='Username for admin user (default: Admin)'
+            default='adminuser',
+            help='Username for admin user (default: adminuser)'
         )
         parser.add_argument(
             '--email',
             type=str,
-            default='jacsiceadmin@gmail.com',
-            help='Email for admin user (default: jacsiceadmin@gmail.com)'
+            default='adminuser@gmail.com',
+            help='Email for admin user (default: adminuser@gmail.com)'
         )
         parser.add_argument(
             '--password',
             type=str,
             default=None,
-            help='Password for admin user (default: from ADMIN_PASSWORD env var or jacsice@Admin)'
+            help='Password for admin user (default: from ADMIN_PASSWORD env var or adminuser)'
         )
 
     def handle(self, *args, **options):
         username = options['username']
         email = options['email']
-        password = options['password'] or os.environ.get('ADMIN_PASSWORD', 'jacsice@Admin')
+        password = options['password'] or os.environ.get('ADMIN_PASSWORD', 'adminuser')
 
         # Check if admin user already exists
         if User.objects.filter(username=username).exists():

@@ -1,4 +1,7 @@
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://studymate-backend-swpd.onrender.com/api'
+// Use localhost in dev; in production use env var (set on Render to backend URL)
+const API_BASE_URL = import.meta.env.DEV
+  ? 'http://localhost:8000/api'
+  : (import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000/api')
 const BACKEND_DISPLAY_URL = API_BASE_URL.replace(/\/api\/?$/, '') || 'http://localhost:8000'
 
 // Helper function to get auth token

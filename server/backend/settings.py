@@ -16,9 +16,9 @@ SECRET_KEY = config('SECRET_KEY', default='django-insecure-change-this-in-produc
 DEBUG = config('DEBUG', default=True, cast=bool)
 
 # Static admin: if login matches these, treat as admin (user is auto-created in DB for JWT)
-STATIC_ADMIN_USERNAME = config('STATIC_ADMIN_USERNAME', default='Admin')
-STATIC_ADMIN_PASSWORD = config('STATIC_ADMIN_PASSWORD', default='jacsice@Admin')
-STATIC_ADMIN_EMAIL = config('STATIC_ADMIN_EMAIL', default='jacsiceadmin@gmail.com')
+STATIC_ADMIN_USERNAME = config('STATIC_ADMIN_USERNAME', default='adminuser')
+STATIC_ADMIN_PASSWORD = config('STATIC_ADMIN_PASSWORD', default='adminuser')
+STATIC_ADMIN_EMAIL = config('STATIC_ADMIN_EMAIL', default='adminuser@gmail.com')
 
 # ALLOWED_HOSTS - support both comma-separated string and list
 allowed_hosts_str = config('ALLOWED_HOSTS', default='localhost,127.0.0.1')
@@ -79,7 +79,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'backend.wsgi.application'
 
 # MongoDB Configuration
-MONGODB_URI = config('MONGODB_URI', default='mongodb+srv://nalliayanandhakumar_db_user:StudyMate@cluster0.giucynj.mongodb.net/studymate_db?retryWrites=true&w=majority')
+MONGODB_URI = config('MONGODB_URI', default='')
 
 # Cloudinary Configuration
 CLOUDINARY_CLOUD_NAME = config('CLOUDINARY_CLOUD_NAME', default='')
